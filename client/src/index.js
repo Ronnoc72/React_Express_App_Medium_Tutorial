@@ -1,8 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import Home from './Components/Home';
+import NewFile from './Components/NewFile';
+import { Route, BrowserRouter as Router } from 'react-router-dom';
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+const router = (
+  <Router>
+    <div>
+      <Route path="/home" component={Home} />
+      <Route path="/newfile" component={NewFile} />
+    </div>
+  </Router>
+)
+
+ReactDOM.render(router, document.getElementById('root'));
